@@ -1,11 +1,15 @@
 //your code here
-void setup()
+Particle[] supastars;
 {
 	//your code here
+	size(400,400);
+	background(0);
 }
 void draw()
 {
 	//your code here
+	NormalParticle bob = new NormalParticle();
+
 }
 class NormalParticle implements Particle
 {
@@ -13,7 +17,9 @@ class NormalParticle implements Particle
 	double x, y, theSpeed, theAngle;
 	int theColor;
 	NormalParticle(){
-
+		x = 50;
+		y = 50;
+		
 	}
 	void move(){
 		x += cos(theAngle * theSpeed);
