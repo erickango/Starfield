@@ -1,14 +1,17 @@
 //your code here
 Particle[] supastars;
+void setup()
 {
 	//your code here
 	size(400,400);
-	background(0);
+	
+
 }
+NormalParticle bob = new NormalParticle();
 void draw()
 {
 	//your code here
-	NormalParticle bob = new NormalParticle();
+	background(0);
 	bob.show();
 	bob.move();
 
@@ -17,15 +20,15 @@ class NormalParticle implements Particle
 {
 	//your code here
 	float x, y, theSpeed, theAngle;
-	int theColor;
-	int q = (int)(Math.random() * 256);
-	int w = (int)(Math.random() * 256);
-	int e = (int)(Math.random() * 256);
+	int q, w, e;
 	NormalParticle(){
 		x = 50;
 		y = 50;
-		theAngle = 90;
-		theSpeed = 3;
+		theSpeed = 5;
+		theAngle = 540;
+		q = (int)(Math.random() * 256);
+		w = (int)(Math.random() * 256);
+		e = (int)(Math.random() * 256);
 	}
 	public void move(){
 		x += cos(theAngle * theSpeed);
@@ -33,7 +36,7 @@ class NormalParticle implements Particle
 	}
 	public void show(){
 		fill(q,w,e);
-		ellipse(x, y, 5, 5);
+		ellipse(x, y, 10, 10);
 	}
 }
 interface Particle
