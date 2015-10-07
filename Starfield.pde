@@ -9,24 +9,30 @@ void draw()
 {
 	//your code here
 	NormalParticle bob = new NormalParticle();
+	bob.show();
+	bob.move();
 
 }
 class NormalParticle implements Particle
 {
 	//your code here
-	double x, y, theSpeed, theAngle;
+	float x, y, theSpeed, theAngle;
 	int theColor;
+	int q = (int)(Math.random() * 256);
+	int w = (int)(Math.random() * 256);
+	int e = (int)(Math.random() * 256);
 	NormalParticle(){
 		x = 50;
 		y = 50;
-		
+		theAngle = 90;
+		theSpeed = 3;
 	}
-	void move(){
+	public void move(){
 		x += cos(theAngle * theSpeed);
 		y += sin(theAngle * theSpeed);
 	}
-	void show(){
-		color(theColor);
+	public void show(){
+		fill(q,w,e);
 		ellipse(x, y, 5, 5);
 	}
 }
