@@ -1,14 +1,15 @@
 //your code here
-Particle[] supastars = new Particle[101];
+Particle[] supastars = new Particle[102];
 void setup()
 {
 	//your code here
 	int i;
 	size(400,400);
-	for(i = 0; i<supastars.length - 1; i++){ supastars[i] = new NormalParticle();
+	for(i = 0; i<supastars.length - 2; i++){ supastars[i] = new NormalParticle();
 	}
 
 	supastars[i] = new OddballParticle();
+	supastars[++i] = new JumboParticle();
 
 }
 
@@ -64,16 +65,20 @@ class OddballParticle implements Particle //uses an interface
 	}
 	public void show(){
 		fill(255,255,255);
-		ellipse(x, y, 50, 50);
+		ellipse(x, y, 10, 10);
 	}
 	public void move(){
 		x+= (int)(Math.random() * 3) -1;
 		y+=(int)(Math.random() * 3) -1;
 	}
 }
-class JumboParticle extends  //uses inheritance
+class JumboParticle extends NormalParticle//uses inheritance
 {
 	//your code here
 
+	public void show(){
+		fill(q,w,e);
+		ellipse((float)x, (float)y, 50, 50);
+	}
 }
 
